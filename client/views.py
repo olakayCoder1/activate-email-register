@@ -22,11 +22,10 @@ def get_tok():
 
 
 
-
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
-        username = request.POST['username']
+        
         user_mail = request.POST['email']
         if form.is_valid():    
             user = form.save(commit=False)
